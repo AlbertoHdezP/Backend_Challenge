@@ -10,6 +10,7 @@ $routes = include __DIR__.'/src/app.php';
 
 $container = include __DIR__.'/src/container.php';
 $container->register('listener.string_response', StringResponseListener::class);
+
 $container->getDefinition('dispatcher')
     ->addMethodCall('addSubscriber', [new Reference('listener.string_response')])
 ;
