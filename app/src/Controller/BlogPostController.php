@@ -63,7 +63,7 @@ class BlogPostController
     {
         require_once '../app/orm.php';
 
-        $blogPost = $entityManager->getRepository(BlogPost::class)->findOneBy(array('slug' => '/' . $slug));
+        $blogPost = $entityManager->getRepository(BlogPost::class)->findOneBy(array('slug' =>  $slug));
 
         if (empty($blogPost)) {
             return ['Error' => 'Not find: ' . $slug];
@@ -85,7 +85,7 @@ class BlogPostController
     {
         require_once '../app/orm.php';
 
-        $blogPost = $entityManager->getRepository(BlogPost::class)->findOneBy(array('slug' => '/' . $slug));
+        $blogPost = $entityManager->getRepository(BlogPost::class)->findOneBy(array('slug' => $slug));
 
         if (empty($blogPost)) {
             return ['Error' => 'Not find: ' . $slug];
