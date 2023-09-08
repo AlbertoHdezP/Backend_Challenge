@@ -17,7 +17,7 @@ class CommentController
             return new JsonResponse(['Error' => 'Method invalidate']);
         }
 
-        require_once '../app/orm.php';
+        require_once './orm.php';
 
         $postId = $request->request->get('post_id');
 
@@ -70,7 +70,7 @@ class CommentController
 
     public function findForId($id)
     {
-        require_once '../app/orm.php';
+        require_once './orm.php';
 
         $comment = $entityManager->getRepository(Comment::class)->find($id);
 
@@ -91,7 +91,7 @@ class CommentController
 
     public function deleteForId($id)
     {
-        require_once '../app/orm.php';
+        require_once './orm.php';
 
         $comment = $entityManager->getRepository(Comment::class)->find($id);
 
@@ -130,7 +130,7 @@ class CommentController
             $page = $request->query->get('page');
         }
 
-        require_once '../app/orm.php';
+        require_once './orm.php';
 
         $dql = "SELECT c FROM Crimsoncircle\Entity\Comment as c WHERE c.blogPost = :post_id";
         $query = $entityManager->createQuery($dql)

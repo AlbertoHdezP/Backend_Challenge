@@ -164,4 +164,4 @@ Create database crimsoncircle
 
 **Run command for create tables in database**
 
-`docker-compose exec php-fpm bash -c "php bin/doctrine orm:schema-tool:create"`
+`docker-compose exec php-fpm bash -c "php ./bin/doctrine orm:schema-tool:create"`

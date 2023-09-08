@@ -5,7 +5,7 @@ use Doctrine\ORM\Tools\Console\ConsoleRunner;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider\SingleManagerProvider;
 
 // Adjust this path to your actual bootstrap.php
-require '../app/orm.php';
+require './orm.php';
 
 ConsoleRunner::run(
     new SingleManagerProvider($entityManager)

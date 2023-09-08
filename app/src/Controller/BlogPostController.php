@@ -15,7 +15,7 @@ class BlogPostController
             return new JsonResponse(['Error' => 'Method invalidate']);
         }
 
-        require_once '../app/orm.php';
+        require_once './orm.php';
 
         $blogPost = new BlogPost();
         $blogPost->setTitle($request->request->get('title'));
@@ -61,7 +61,7 @@ class BlogPostController
 
     public function findForSlug($slug)
     {
-        require_once '../app/orm.php';
+        require_once './orm.php';
 
         $blogPost = $entityManager->getRepository(BlogPost::class)->findOneBy(array('slug' =>  $slug));
 
@@ -83,7 +83,7 @@ class BlogPostController
 
     public function deleteForSlug($slug)
     {
-        require_once '../app/orm.php';
+        require_once './orm.php';
 
         $blogPost = $entityManager->getRepository(BlogPost::class)->findOneBy(array('slug' => $slug));
 
