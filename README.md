@@ -115,7 +115,7 @@ POST http://localhost:8080/comment
 **Get the information for a comment (search it by id)**
 
 ```
-GET http://localhost:8080/commet/12345
+GET http://localhost:8080/comment/12345
 
 {
     "id": 12345
@@ -128,7 +128,7 @@ GET http://localhost:8080/commet/12345
 
 **Delete a comment by the Id**
 
-`DELETE http://localhost:8080/commet/12345`
+`DELETE http://localhost:8080/comment/12345`
 
 
 **Get the list of comments for the specific post id, the list must be displayed by pages, and each page display only 10 comments at the time**
@@ -157,3 +157,11 @@ GET http://localhost:8080/comment/post/123456?page=1
 **NOTE:** you can retrieve the page parameter using the following way:
 
 `$request->query->get('page'), which $request variable is an instance of Symfony\Component\HttpFoundation\Request class`
+
+## Run Solution: 
+
+Create database crimsoncircle
+
+**Run command for create tables in database**
+
+`docker-compose exec php-fpm bash -c "php bin/doctrine orm:schema-tool:create"`
